@@ -1,0 +1,233 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Product preview card component</title>
+  <style>
+  
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--Dark_cyan: hsl(158, 36%, 37%);
+	--Cream: hsl(30, 38%, 92%);
+	--Very_dark_blue: hsl(212, 21%, 14%);
+	--Dark_grayish_blue: hsl(228, 12%, 48%);
+	--White: hsl(0, 0%, 100%);
+
+	/* font size */
+	--head: 2rem;
+	--text: 1rem;
+}
+
+    img {
+	max-width: 100%;
+}
+
+.container {
+	min-height: 100vh;
+	background-color: var(--Cream);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-box {
+	margin: 1em 2em;
+	max-width: 400px;
+	background-color: white;
+	border-radius: 1.5em;
+}
+
+.desktop_img {
+	display: none;
+}
+
+.mobile_img {
+	border-radius: 1em 1em 0 0;
+}
+
+.card_text {
+	text-align: left;
+	margin: 1.5em 2em;
+}
+
+.product {
+	font-family: "Montserrat", sans-serif;
+	font-size: var(--text);
+	color: var(--Dark_grayish_blue);
+	letter-spacing: 0.4em;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.product_title {
+	font-size: var(--head);
+	font-weight: 700;
+	font-family: "Fraunces", serif;
+	line-height: 1;
+	margin: 0.6em 0 0.7em 0;
+}
+
+.description {
+	font-family: "Montserrat", sans-serif;
+	width: 96%;
+	font-size: var(--text);
+	color: var(--Dark_grayish_blue);
+	font-weight: 500;
+	margin-bottom: 1.5em;
+}
+
+.green_text {
+	margin-right: 0.3em;
+	color: var(--Dark_cyan);
+}
+
+.strike {
+	text-decoration: line-through;
+	align-self: center;
+}
+
+.btn {
+	display: block;
+	margin: 2em 0 1em 0;
+	background-color: var(--Dark_cyan);
+	width: 100%;
+	padding: 1em 0;
+	color: var(--White);
+	border: 0;
+	border-radius: 0.7em;
+	outline: none;
+}
+
+.btn:hover,
+btn:focus {
+	background-color: hsl(156, 24%, 24%);
+}
+
+.btn_img {
+	margin-right: 1em;
+	max-width: 100%;
+}
+.btn_text {
+	color: var(--White);
+}
+
+/* For smaller screen */
+@media (max-width: 260px) {
+	:root {
+		--head: 1.3rem;
+		--text: 0.9rem;
+	}
+
+	.card-box {
+		margin: 1em;
+		max-width: 200px;
+	}
+
+	.card-box {
+		max-width: 200px;
+	}
+
+	.card_text {
+		text-align: left;
+		margin: 1.5em 0.6em;
+	}
+
+	.btn {
+		padding: 0.6em 0;
+	}
+}
+
+/* For PC & HD+ screen */
+@media (min-width: 650px) {
+	.card-box {
+		display: flex;
+		max-width: 700px;
+	}
+
+	.desktop_img {
+		display: block;
+		width: 900px;
+		height: 100%;
+		border-radius: 1.5em 0 0 1.5em;
+	}
+
+	.mobile_img {
+		display: none;
+	}
+
+	.product_title {
+		width: 80%;
+	}
+}
+
+/* For 4K & Full HD+ screen */
+@media (min-width: 1921px) {
+	:root {
+		--head: 5rem;
+		--text: 2rem;
+	}
+
+	.card_text {
+		text-align: left;
+		margin: 4em 2.5em;
+	}
+
+	.card-box {
+		margin: 1em;
+		max-width: 1200px;
+	}
+
+	.desktop_img {
+		width: 1600px;
+		height: 100%;
+	}
+
+	.btn {
+		padding: 2em 0;
+	}
+}
+
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="card-box">
+      <div class="img">
+        <img src="https://bit.ly/3zmbftd" alt="img-desktop" class="desktop_img">
+  
+        <img src="https://bit.ly/3JiQ8wJ" alt="img-mobile" class="mobile_img">
+      </div>
+  
+      <div class="card_text">
+        <p class="product">Perfume</p>
+        <h2 class="product_title">Gabrielle Essence Eau De Parfum</h2>
+  
+        <p class="description">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL</p>
+  
+        <p class="price">
+          <span class="product_title green_text">$149.99 </span>
+          <span class="description strike">$169.99</span>
+        </p>
+  
+        <button class="btn"><img src="https://bit.ly/3Q6Adni" alt="" class="btn_img"><span class="description btn_text">Add to Cart</span></button>
+      </div>
+    </div>
+  
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Deepthi</a>.
+  </div>
+</body>
+</html>
